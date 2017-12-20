@@ -62,7 +62,7 @@ public class WebDemo {
 
     @Test
     public void fun4(){
-        System.setProperty("webdriver.chrome.driver", "D:\\ideaWorkspace\\tools\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:\\ideaWorkspace\\ideaWorkspace\\tools\\chromedriver.exe");
         webDriver = new ChromeDriver();
         webDriver.get("http://www.baidu.com");
         Boolean findone = webDriver.findElement(By.id("su")).isDisplayed();
@@ -72,16 +72,24 @@ public class WebDemo {
 
     @Test
     public void fun5(){
-        System.setProperty("webdriver.chrome.driver", "D:\\ideaWorkspace\\tools\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:\\ideaWorkspace\\ideaWorkspace\\tools\\chromedriver.exe");
         webDriver = new ChromeDriver();
         webDriver.get("http://www.baidu.com");
-        webDriver.switchTo().alert();
+
         File file = ((TakesScreenshot)webDriver).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(file,new File("D:\\test.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void fun6(){
+        System.setProperty("webdriver.chrome.driver", "D:\\ideaWorkspace\\ideaWorkspace\\tools\\chromedriver.exe");
+        webDriver = new ChromeDriver();
+        webDriver.get("http://www.baidu.com");
+
     }
 
 
