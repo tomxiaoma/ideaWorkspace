@@ -20,6 +20,6 @@ public class AlertDemo {
 
     @Test
     public void alertTest(){
-
+        System.out.print("hello world");
     }
 }
