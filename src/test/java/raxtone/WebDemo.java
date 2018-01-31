@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.File;
@@ -18,6 +19,14 @@ import java.util.List;
 public class WebDemo {
 
     WebDriver webDriver = null;
+
+    WebDriver driver =null;
+
+    @BeforeTest
+    public void publicTest(){
+        System.setProperty("webdriver.chrome.driver", "D:\\ideaWorkspace\\ideaWorkspace\\tools\\chromedriver.exe");
+        driver = new ChromeDriver();
+    }
 
     @Test
     public void openFirefox(){
@@ -48,7 +57,7 @@ public class WebDemo {
 
     @Test
     public void fun3(){
-        System.setProperty("webdriver.chrome.driver", "D:\\ideaWorkspace\\tools\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:\\ideaWorkspace\\ideaWorkspace\\tools\\chromedriver.exe");
         webDriver = new ChromeDriver();
         webDriver.get("http://www.baidu.com");
        WebElement element = webDriver.findElement(By.id("kw"));
@@ -72,7 +81,7 @@ public class WebDemo {
 
     @Test
     public void fun5(){
-        System.setProperty("webdriver.chrome.driver", "D:\\ideaWorkspace\\ideaWorkspace\\tools\\chromedriver.exe");
+
         webDriver = new ChromeDriver();
         webDriver.get("http://www.baidu.com");
 
@@ -92,6 +101,12 @@ public class WebDemo {
 
     }
 
+    @Test
+    public void alertDemo(){
+        driver.get("http://www.baidu.com");
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+    }
 
    @AfterTest
     public void closeFireFox() throws InterruptedException {
