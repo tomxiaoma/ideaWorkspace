@@ -29,7 +29,7 @@ public class SendEmail {
 
     @Test
     public void sendEmailTest() throws InterruptedException {
-        SendEmail.loginFuntion(driver,"15900796431","mwt28320181");
+        SendEmail.loginFuntion(driver,"15900796431","mwt2832018");
 
         WebDriverWait driverWait = new WebDriverWait(driver,10);
         driverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id='dvNavTop']/ul/li/span[contains(text(),\"写 信\")]")));
